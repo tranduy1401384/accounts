@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: accounts
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # Realm name is an assumption ("users", from setup/.env) - override with KEYCLOAK_REALM.
+          issuer-uri: http://54.91.88.223:8080/realms/${KEYCLOAK_REALM:users}
+logging:
+  level:
+    root: debug
