@@ -9,7 +9,15 @@ spring:
       resourceserver:
         jwt:
           # Realm name is an assumption ("users", from setup/.env) - override with KEYCLOAK_REALM.
-          issuer-uri: http://54.91.88.223:8080/realms/${KEYCLOAK_REALM:users}
+          issuer-uri: http://54.81.93.101:8080/realms/${KEYCLOAK_REALM:users}
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
 logging:
   level:
-    root: debug
+    root: info
+  pattern:
+    correlation: "[${spring.application.name:},%X{traceId:-},%X{spanId:-}] "
+  include-application-name: false

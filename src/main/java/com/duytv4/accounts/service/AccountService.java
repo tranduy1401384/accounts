@@ -34,6 +34,7 @@ public class AccountService {
     }
 
     public Account create(Account account) {
+        log.info("Create account [{}]", account);
         account.setId(sequence.incrementAndGet());
         if (account.getBalance() == null) {
             account.setBalance(BigDecimal.ZERO);
