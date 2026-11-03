@@ -23,5 +23,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/superedge:latest
-            ${{ secrets.DOCKER_USERNAME }}/superedge:${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/superaccount:latest
+            ${{ secrets.DOCKER_USERNAME }}/superaccount:${{ github.sha }}
